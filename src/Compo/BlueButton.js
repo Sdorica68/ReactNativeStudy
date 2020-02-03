@@ -18,9 +18,22 @@ import {
 export default class BlueButton extends React.Component {
   constructor(props) {
     super(props);
+    console.log(' Blue Button is constructed !!! \n\n\n');
+    // Initialize
+    this.state = {theText: 'Initial Text', another: {age: 3}, theNum: 0};
   }
 
   render() {
+    const {theText, theNum} = this.state;
+    const theColor = `#EE${theNum}`;
+    console.log(
+      ' the number : ',
+      this.state,
+      this.state.another.age,
+      theText,
+      theNum,
+      theColor,
+    );
     return (
       <View
         style={{
@@ -29,8 +42,15 @@ export default class BlueButton extends React.Component {
           height: 100,
           backgroundColor: '#AFA',
         }}>
-        <TouchableOpacity style={{backgroundColor: '#EaE3Ea'}}>
+        <TouchableOpacity
+          onPress={() =>
+            this.setState({theText: 'Changed', theNum: this.state.theNum + 1})
+          }
+          style={{backgroundColor: theColor}}>
           <Text> This is blue button</Text>
+          <Text>
+            {theText} {theColor}
+          </Text>
         </TouchableOpacity>
       </View>
     );
