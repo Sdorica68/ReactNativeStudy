@@ -33,7 +33,6 @@ export default class BlueButton extends React.Component {
         style={{
           alignItems: 'center',
           width: '100%',
-          height: 100,
           backgroundColor: '#229',
         }}>
         <TouchableOpacity
@@ -56,6 +55,11 @@ export default class BlueButton extends React.Component {
           <Text> This is just member variable ..</Text>
           <Text>this.count is {this.count}</Text>
         </TouchableOpacity>
+
+        <Text  style={{ color: '#cde' }}>This is another text</Text>
+        <Text style = {{color: 'white'}}>Not Bold 
+          <Text style={{ color: 'white', fontWeight : 'bold'}}> Bold</Text>
+        </Text>
       </View>
     );
   }
